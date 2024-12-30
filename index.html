@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="popup-trigger__container">
+      <button class="button button--show-modal">Show Modal</button>
+    </div>
+    <div class="popup-modal">
+      <div class="popup-modal__wrapper">
+        <div class="popup-modal__overlay"></div>
+        <div class="music-container">
+            <header>
+              <div class="music-container-wrapper">
+                <div class="image-wrapper">
+                  <img src="./images/illustration-hero.svg" alt="" />
+                </div>
+              </div>
+            </header>
+            <main>
+              <div class="music-content">
+                <div class="music-content-wrapper">
+                  <h2 class="summary">Order Summary</h2>
+                  <div class="summary-description">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum,
+                      asperiores nisi. Repudiandae commodi nisi placeat?
+                    </p>
+                  </div>
+                  <div class="music-libaray">
+                    <div class="image-wrapper-music">
+                      <img src="./images/icon-music.svg" alt="" />
+                      <div class="annual-plans">
+                        <h4>Annual Plans</h4>
+                        <span>$59.99/year</span>
+                      </div>
+                    </div>
+                    <div class="change-songs-btn">
+                      <a href="#">Change</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <footer>
+              <div class="footer-container">
+                <div class="payment-btn">
+                  <a href="#">Proceed to Payment</a>
+                </div>
+                <h4>Canel Order</h4>
+              </div>
+            </footer>
+          </div>
+      </div>
+    </div>
+    <script>
+      let popupModalEl = document.querySelector(".popup-modal");
+      let popupOverlayEl = document.querySelector(".popup-modal__overlay");
+      let popupTriggerBtn = document.querySelector(".button--show-modal");
+      function showPopup() {
+        popupModalEl.classList.add("show");
+      }
+      function hidePopup() {
+        popupModalEl.classList.remove("show");
+      }
+      popupTriggerBtn.addEventListener("click", () => {
+        showPopup();
+      });
+      popupOverlayEl.addEventListener("click", () => {
+        hidePopup();
+      });
+      setTimeout(() => {
+        showPopup();
+      }, 3000);
+    </script>
+  </body>
+</html>
